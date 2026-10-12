@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Colores, tipografías y papel: css/theme.css · Diseño: css/styles.css · Textos: js/config.js -->
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Filtro SVG que da aspecto de tinta/sello gastado (lo usan los ornamentos) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="aspero" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/>
+        </filter>
+    </svg>
+
+    <audio id="bg-music" loop></audio>
+
+    <!-- LA CARTA: toda la invitación es una sola hoja de pergamino -->
+    <main class="carta" id="carta">
+        <div class="marco" aria-hidden="true">
+            <span class="marco-ext"></span>
+        </div>
+
+        <section class="identidad-portada" aria-label="Nombres de los novios">
+            <img class="anillos-portada" src="assets/images/anillos-boda.png" alt="" aria-hidden="true">
+            <p class="nota-invitacion">Te invitamos a celebrar nuestra boda</p>
+            <h1 id="txt-nombres-footer" class="nombres-footer"></h1>
+            <p id="txt-frase" class="frase-portada"></p>
+        </section>
+
+        <time class="fecha-boda" id="fecha-boda" aria-label="Fecha de la boda">
+            <span class="fecha-boda-dia-semana" id="fecha-dia-semana"></span>
+            <span class="fecha-boda-centro">
+                <span class="fecha-boda-mes" id="fecha-mes"></span>
+                <strong class="fecha-boda-dia" id="fecha-dia"></strong>
+            </span>
+            <span class="fecha-boda-anio" id="fecha-anio"></span>
+        </time>
+
+        <div class="music-player" aria-label="Reproductor de música">
+            <p class="music-title">Dale play a nuestra canción</p>
+            <input id="music-progress" class="music-progress" type="range" min="0" max="100" value="0" aria-label="Posición de la canción" disabled>
+            <button id="btn-music" class="music-btn" type="button" aria-label="Reproducir música">
+                <svg id="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 21 12 6 21"></polygon></svg>
+                <svg id="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none;"><rect x="5" y="4" width="5" height="16"></rect><rect x="14" y="4" width="5" height="16"></rect></svg>
+            </button>
+        </div>
+
+        <!-- ======== NUESTRA HISTORIA ======== -->
+        <section id="galeria" class="seccion galeria">
+            <div class="contenido fade-in">
+                <h2 id="txt-galeria-titulo" class="titulo-seccion">Nuestra Historia</h2>
+                <div class="grid-gallery" id="gallery-container"></div>
+            </div>
+        </section>
+
+        <!-- ======== MENSAJE ======== -->
+        <section id="mensaje" class="seccion mensaje">
+            <div class="contenido fade-in">
+                <div class="rama" data-ornament="sprigDivider"></div>
+                <h2 id="txt-mensaje-titulo" class="titulo-seccion"></h2>
+                <p id="txt-mensaje" class="texto-principal"></p>
+            </div>
+        </section>
+
+        <!-- ======== CUENTA REGRESIVA + CALENDARIO ======== -->
+        <section id="cuenta-regresiva" class="seccion cuenta">
+            <div class="contenido fade-in">
+                <h2 id="txt-faltan" class="titulo-seccion">Faltan</h2>
+                <div class="countdown" id="countdown-container">
+                    <div class="time-box"><span id="cd-dias">00</span><p>Días</p></div>
+                    <div class="time-box"><span id="cd-horas">00</span><p>Horas</p></div>
+                    <div class="time-box"><span id="cd-min">00</span><p>Min</p></div>
+                    <div class="time-box"><span id="cd-seg">00</span><p>Seg</p></div>
+                </div>
+                <div class="calendario papel rasgado" id="calendario" data-torn="0.9" aria-label="Calendario del mes de la boda"></div>
+            </div>
+        </section>
+
+        <!-- ======== LUGARES ======== -->
+        <section id="lugares" class="seccion lugares">
+            <div class="contenido fade-in">
+                <div class="grid-2">
+                    <article class="card-lugar papel rasgado giro-izq" data-torn="1">
+                        <span class="cinta cinta-c"></span>
+                        <div class="lugar-icon" data-icon="iglesia"></div>
+                        <h3 id="txt-iglesia-titulo">Ceremonia Religiosa</h3>
+                        <h4 id="txt-iglesia-nombre"></h4>
+                        <p id="txt-iglesia-hora" class="hora"></p>
+                        <p id="txt-iglesia-dir" class="direccion"></p>
+                        <a id="link-iglesia-map" href="#" target="_blank" rel="noopener" class="btn-outline">Ver en Google Maps</a>
+                    </article>
+                    <article class="card-lugar papel rasgado giro-der" data-torn="1">
+                        <span class="cinta cinta-c"></span>
+                        <div class="lugar-icon" data-icon="finca"></div>
+                        <h3 id="txt-recepcion-titulo">Recepción</h3>
+                        <h4 id="txt-recepcion-nombre"></h4>
+                        <p id="txt-recepcion-hora" class="hora"></p>
+                        <p id="txt-recepcion-dir" class="direccion"></p>
+                        <a id="link-recepcion-map" href="#" target="_blank" rel="noopener" class="btn-outline">Ver en Google Maps</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== ITINERARIO ======== -->
+        <section id="itinerario" class="seccion itinerario">
+            <div class="contenido fade-in">
+                <h2 id="txt-itinerario-titulo" class="titulo-seccion">Itinerario</h2>
+                <div class="timeline" id="timeline-container"></div>
+            </div>
+        </section>
+
+        <!-- ======== CÓDIGO DE VESTIMENTA ======== -->
+        <section id="vestimenta" class="seccion vestimenta" hidden>
+            <div class="contenido fade-in">
+                <h2 id="txt-vestimenta-titulo" class="titulo-seccion">Código de Vestimenta</h2>
+                <figure class="dresscode-fig" id="dresscode-fig"></figure>
+                <p id="txt-dresscode" class="dresscode-codigo"></p>
+                <p id="txt-dresscode-desc" class="dresscode-desc"></p>
+                <div class="reservados" id="colores-reservados" hidden></div>
+            </div>
+        </section>
+
+        <!-- ======== REGALOS ======== -->
+        <section id="regalos" class="seccion regalos" hidden>
+            <div class="contenido fade-in">
+                <div class="icono-seccion" data-icon="regalo"></div>
+                <h2 id="txt-regalos-titulo" class="titulo-seccion">Regalos</h2>
+                <p id="txt-regalos-mensaje" class="texto-principal"></p>
+                <div class="regalos-lista" id="regalos-lista"></div>
+            </div>
+        </section>
+
+        <!-- ======== RECOMENDACIONES ======== -->
+        <section id="recomendaciones" class="seccion recomendaciones" hidden>
+            <div class="contenido fade-in">
+                <h2 id="txt-recomendaciones-titulo" class="titulo-seccion">Recomendaciones</h2>
+                <div class="reco-lista" id="reco-lista"></div>
+            </div>
+        </section>
+
+        <!-- ======== RSVP ======== -->
+        <section id="rsvp" class="seccion rsvp">
+            <div class="contenido fade-in">
+                <h2 class="titulo-seccion">Confirmación de Asistencia</h2>
+                <div class="form-rsvp papel rasgado" data-torn="0.8">
+                    <span class="cinta cinta-c" aria-hidden="true"></span>
+                    <p class="confirmacion-nota">Para confirmar tu asistencia, comunícate por WhatsApp a cualquiera de estos números:</p>
+                    <ul class="confirmacion-contactos">
+                        <li>
+                            <span>315 514 0910</span>
+                            <div>
+                                <a href="https://wa.me/573155140910" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span>313 432 9006</span>
+                            <div>
+                                <a href="https://wa.me/573134329006" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="confirmacion-limite">Por favor, confirma antes del <strong><span id="txt-fecha-limite"></span></strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== CIERRE ======== -->
+        <footer class="cierre">
+            <div class="cierre-contenido fade-in">
+                <p id="txt-cierre" class="agradecimiento"></p>
+                <div class="cierre-sellos">
+                    <img class="sello-novios" src="assets/images/sello-novios-limpio.png" alt="Sello de autenticación con los nombres de Luis y Nelly">
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/ornaments.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/music.js"></script>
+</body>
+</html>

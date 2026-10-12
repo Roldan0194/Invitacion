@@ -1,0 +1,59 @@
+/* ==========================================================================
+   TEMA DE LA INVITACIÓN  ·  Aquí se cambia el estilo visual de TODA la página
+   ==========================================================================
+   Para cambiar una tipografía:
+     1) Cambia el nombre de la fuente en la línea @import de abajo
+        (busca la fuente en https://fonts.google.com y copia su "family=").
+     2) Cambia el nombre en las variables --fuente-* de más abajo.
+   Para cambiar colores: edita los valores hex de las variables.
+   ========================================================================== */
+
+/* Tipografías (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+    /* ---------- TIPOGRAFÍAS ---------- */
+    --fuente-titulo: 'Cormorant Garamond', Georgia, serif;   /* RESERVA LA FECHA, títulos en mayúsculas */
+    --fuente-texto:  'Cormorant Garamond', Georgia, serif;   /* párrafos y formulario */
+    --fuente-script: 'Allura', 'Brush Script MT', cursive;   /* ¡Nos casamos!, nombres, títulos de sección */
+
+    /* ---------- PAPEL / PERGAMINO ---------- */
+    --papel:          #E8DABE;   /* color base del pergamino */
+    --papel-claro:    #F1E7CF;   /* hojas y tarjetas sobrepuestas */
+    --papel-oscuro:   #D4C09A;   /* manchas y bordes envejecidos */
+    --papel-borde:    #F7F0DD;   /* fibra clara del borde rasgado */
+    --fondo-escritorio: #B9A57F; /* color detrás de la carta en pantallas grandes */
+    --textura-intensidad: 1;     /* 0 = papel liso · 1 = normal · 1.6 = muy envejecido */
+
+    /* ---------- TINTAS ---------- */
+    --tinta:          #3F4428;   /* textos principales (verde oliva oscuro) */
+    --tinta-suave:    #565B3D;   /* textos secundarios y líneas finas */
+    --linea:          rgba(63, 68, 40, .55);  /* marco y divisores */
+    --acento:         #6E7B57;   /* verde salvia: botones, detalles */
+    --acento-oscuro:  #4F5A3C;
+    --cafe:           #7D5A45;   /* íconos del itinerario y lugares */
+
+    /* ---------- SELLO DE CERA ---------- */
+    --sello:          #5D6244;
+    --sello-claro:    #7C8160;
+    --sello-sombra:   #3B3F2A;
+
+    /* ---------- FLORES Y HOJAS (ilustraciones) ---------- */
+    --flor-petalo:    #F6F0DF;
+    --flor-centro:    #D8A93B;
+    --flor-linea:     #8C7A55;
+    --hoja:           #6C7B58;
+    --hoja-oscura:    #4E5C3D;
+    --hoja-clara:     #98A582;
+    --hoja-linea:     #3F4A31;
+    --tallo:          #5E6B49;
+    --boton-flor:     #E2D2AC;   /* capullos */
+    --cordel:         #B49A6A;   /* cordel del ramo */
+
+    /* ---------- ESTADOS (formulario) ---------- */
+    --ok-fondo: #E4EBD3;  --ok-texto: #3F5A2A;
+    --error-fondo: #F2DDD3; --error-texto: #8A3A24;
+
+    /* ---------- MEDIDAS ---------- */
+    --ancho-carta: 720px;      /* ancho máximo de la carta en computador */
+}
