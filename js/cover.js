@@ -66,6 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = document.getElementById(window.location.hash.slice(1));
                 if (target) target.scrollIntoView({ block: 'start' });
             }, 3000);
-        }, reducedMotion ? 260 : 4000);
+        }, reducedMotion ? 260 : 1000);
     });
 });

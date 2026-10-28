@@ -38,7 +38,7 @@ Sin cambios: `CONFIG.urlAppsScript` + `backend/codigo-apps-script.js`.
 
 ## Portada del sobre
 - La portada es la primera pantalla al abrir `index.html`; el sello permite entrar a la invitación original.
-- La apertura tarda 4 segundos; después de terminar, espera 3 segundos antes de revelar la invitación. Con movimiento reducido, solo la apertura es más breve.
+- La apertura tarda 2 segundos; después de terminar, espera 3 segundos antes de revelar la invitación. Con movimiento reducido, solo la apertura es más breve.
 - Para mostrar nombres de invitados en la parte superior de la portada, agrega el parámetro `nombres` como arreglo JSON en el enlace: `index.html?nombres=%5B%22Ana%20Garc%C3%ADa%22%2C%22Luis%20P%C3%A9rez%22%5D`. Se mostrarán separados por comas. El parámetro debe contener una lista de textos JSON.
 - Para reemplazar el sobre cerrado, conserva el nombre `assets/images/sobre-cerrado.png` y sus proporciones. La imagen actual ya tiene transparencia.
 - La imagen de sobre abierto es opcional. Cuando esté disponible, guárdala en `assets/images/sobre-abierto.png` y asigna esa ruta al atributo `data-open-src` de la imagen `sobre-imagen--cerrado` en `index.html`. La animación y navegación detectarán el recurso sin cambiar el flujo de apertura.
