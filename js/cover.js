@@ -57,15 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.setTimeout(() => {
-            window.setTimeout(() => {
-                cover.hidden = true;
-                invitation.hidden = false;
-                invitation.classList.add('revelando');
-                invitation.focus({ preventScroll: true });
+            cover.hidden = true;
+            invitation.hidden = false;
+            invitation.classList.add('revelando');
+            invitation.focus({ preventScroll: true });
 
-                const target = document.getElementById(window.location.hash.slice(1));
-                if (target) target.scrollIntoView({ block: 'start' });
-            }, 3000);
-        }, reducedMotion ? 260 : 1000);
+            const target = document.getElementById(window.location.hash.slice(1));
+            if (target) target.scrollIntoView({ block: 'start' });
+        }, reducedMotion ? 260 : 3000);
     });
 });
