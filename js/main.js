@@ -64,9 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const div = document.createElement('div');
         div.className = `timeline-item ${lado} fade-in`;
         div.innerHTML = `
-            <div class="timeline-icon" aria-hidden="true">${ICONS[item.icono] || ''}</div>
+            <div class="timeline-content">
+                <div class="timeline-icon" aria-hidden="true">${ICONS[item.icono] || ''}</div>
+                <div class="timeline-text"><span class="timeline-event"></span><span class="timeline-time"></span></div>
+            </div>
             <div class="timeline-dot"></div>
-            <div class="timeline-text"><span class="timeline-event"></span><span class="timeline-time"></span></div>`;
+        `;
         div.querySelector('.timeline-event').textContent = item.evento;
         div.querySelector('.timeline-time').textContent = item.hora;
         timeline.appendChild(div);
