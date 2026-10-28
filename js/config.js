@@ -67,8 +67,12 @@ const CONFIG = {
     vestimenta: {
         mostrar: true,
         titulo: "Código de Vestimenta",
-        codigo: "Formal / Elegante",
-        descripcion: "Queremos verte elegante y cómodo para disfrutar con nosotros de principio a fin.",
+        codigo: "F O R M A L  /  E L E G A N T E",
+        descripcion: "Ponte tu mejor pinta para celebrar con nosotros.",
+        detalles: [
+            { etiqueta: "Ellas", texto: "Vestido formal largo de tarde-noche. Para tu comodidad y debido a las características del lugar, te sugerimos evitar los tacones de puntilla (¡queremos verte en la pista de baile!)." },
+            { etiqueta: "Ellos", texto: "Traje formal o smoking." }
+        ],
         imagen: "assets/images/codigo-vestimenta-pareja.png",
         imagenAlt: "Pareja de novios bailando",
 

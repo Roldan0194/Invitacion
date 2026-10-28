@@ -184,7 +184,16 @@ function renderVestimenta(v) {
     $('vestimenta').hidden = false;
     setText('txt-vestimenta-titulo', v.titulo);
     setText('txt-dresscode', v.codigo);
-    setText('txt-dresscode-desc', v.descripcion || '');
+    const descripcion = $('txt-dresscode-desc');
+    descripcion.textContent = v.descripcion || '';
+    (v.detalles || []).forEach(detalle => {
+        const parrafo = document.createElement('p');
+        parrafo.className = 'dresscode-detalle';
+        const etiqueta = document.createElement('strong');
+        etiqueta.textContent = `${detalle.etiqueta}: `;
+        parrafo.append(etiqueta, document.createTextNode(detalle.texto));
+        descripcion.appendChild(parrafo);
+    });
 
     const fig = $('dresscode-fig');
     if (v.imagen) {

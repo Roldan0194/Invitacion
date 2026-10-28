@@ -330,6 +330,7 @@ img { max-width: 100%; display: block; }
 }
 .dresscode-codigo { font: 700 1.5rem var(--fuente-titulo); letter-spacing: .14em; text-transform: uppercase; }
 .dresscode-desc { font-style: italic; font-size: 1.2rem; margin-top: 6px; color: var(--tinta-suave); text-wrap: balance; }
+.dresscode-detalle { margin-top: 14px; font-style: normal; font-size: 1rem; line-height: 1.55; }
 .reservados { margin-top: 38px; padding-top: 30px; border-top: 1px dashed var(--linea); }
 .reservados-titulo { font: 400 2.5rem/1.1 var(--fuente-script); }
 .reservados-msg { font-size: 1.1rem; color: var(--tinta-suave); margin: 4px auto 22px; max-width: 420px; text-wrap: balance; }
