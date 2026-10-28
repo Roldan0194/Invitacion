@@ -6,11 +6,25 @@
     <title>Invitación de Boda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/sobre-cerrado.png">
     <!-- Colores, tipografías y papel: css/theme.css · Diseño: css/styles.css · Textos: js/config.js -->
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <section class="sobre-portada" id="sobre-portada" aria-labelledby="sobre-instruccion">
+        <div class="sobre-contenido">
+            <p class="sobre-frase">Te invitamos a celebrar nuestra boda</p>
+            <div class="sobre-escena">
+                <img class="sobre-imagen sobre-imagen--cerrado" src="assets/images/sobre-cerrado.png" data-open-src="" alt="" fetchpriority="high">
+                <button class="sobre-sello" id="sobre-sello" type="button" aria-label="Abrir la invitación pulsando el sello de lacre">
+                    <span class="solo-lectores">Abrir la invitación</span>
+                </button>
+            </div>
+            <p class="sobre-instruccion" id="sobre-instruccion">Pulsa el sello para abrir tu invitación</p>
+        </div>
+    </section>
+
     <!-- Filtro SVG que da aspecto de tinta/sello gastado (lo usan los ornamentos) -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <filter id="aspero" x="-5%" y="-5%" width="110%" height="110%">
@@ -22,7 +36,7 @@
     <audio id="bg-music" loop></audio>
 
     <!-- LA CARTA: toda la invitación es una sola hoja de pergamino -->
-    <main class="carta" id="carta">
+    <main class="carta" id="carta" hidden tabindex="-1">
         <div class="marco" aria-hidden="true">
             <span class="marco-ext"></span>
         </div>
@@ -188,5 +202,6 @@
     <script src="js/ornaments.js"></script>
     <script src="js/main.js"></script>
     <script src="js/music.js"></script>
+    <script src="js/cover.js"></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
 | Recomendaciones (hoy solo puntualidad)            | `js/config.js` → `recomendaciones` |
 | Íconos e ilustraciones                            | `js/icons.js`, `js/ornaments.js` |
 | Diseño y tamaños                                  | `css/styles.css`   |
+| Portada del sobre                                 | `index.html`, `js/cover.js`, `assets/images/` |
 
 ## Tema (css/theme.css)
 - Cambia una tipografía: edita la línea `@import` (Google Fonts) y la variable `--fuente-*` correspondiente.
@@ -34,3 +35,10 @@ Salen automáticamente de `CONFIG.fecha`. `calendario.inicioSemana`: 1 = lunes, 
 
 ## RSVP
 Sin cambios: `CONFIG.urlAppsScript` + `backend/codigo-apps-script.js`.
+
+## Portada del sobre
+- La portada es la primera pantalla al abrir `index.html`; el sello permite entrar a la invitación original.
+- La apertura tarda 5 segundos y el sobre se desvanece al final antes de revelar la invitación. Con movimiento reducido, la transición es más breve.
+- Para reemplazar el sobre cerrado, conserva el nombre `assets/images/sobre-cerrado.png` y sus proporciones. La imagen actual ya tiene transparencia.
+- La imagen de sobre abierto es opcional. Cuando esté disponible, guárdala en `assets/images/sobre-abierto.png` y asigna esa ruta al atributo `data-open-src` de la imagen `sobre-imagen--cerrado` en `index.html`. La animación y navegación detectarán el recurso sin cambiar el flujo de apertura.
+- El proyecto no requiere compilación. Se puede abrir `index.html` desde un navegador o publicar la carpeta completa en el hosting estático habitual.
