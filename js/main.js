@@ -230,12 +230,14 @@ function renderVestimenta(v) {
 function renderRegalos(r) {
     if (!r || r.mostrar === false) return;
     const activas = (r.opciones || []).filter(o => o.activo !== false);
-    if (!activas.length) return;
+    if (!activas.length && !r.mensaje) return;
     $('regalos').hidden = false;
     $('regalos').querySelectorAll('.icono-seccion[data-icon]').forEach(el => { el.innerHTML = ICONS[el.dataset.icon] || ''; });
     setText('txt-regalos-titulo', r.titulo);
     setText('txt-regalos-mensaje', r.mensaje || '');
     const lista = $('regalos-lista');
+    lista.hidden = activas.length === 0;
+    if (!activas.length) return;
     lista.dataset.cantidad = activas.length;
     activas.forEach(o => {
         const card = document.createElement('article');

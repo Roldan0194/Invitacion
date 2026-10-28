@@ -6,12 +6,12 @@ const CONFIG = {
     // ---------- Datos principales ----------
     nombres: "Luis D. y Nelly M.",
     fecha: "2027-01-23T14:30:00",          // Fecha y hora de la ceremonia (YYYY-MM-DDTHH:MM:SS). De aquí salen la cuenta regresiva y el calendario.
-    fechaLimiteRSVP: "20 de diciembre",
+    fechaLimiteRSVP: "20 de diciembre de 2026",
 
     // ---------- Mensaje ----------
-    frasePortada: "De todos los caminos que pudimos recorrer, elegimos encontrarnos y convertir nuestro amor en hogar.",
+    frasePortada: "De todos los caminos que pudimos recorrer, elegimos encontrarnos y hacer de nuestro amor un hogar.",
     mensajeTitulo: "Una unión bendecida, una alegría compartida",
-    mensajeInvitacion: "Hay alegrías que se multiplican cuando se comparten, y esta es una de ellas.\nCon el corazón lleno de felicidad, queremos celebrar este paso tan importante en nuestras vidas, acompañados de quienes han hecho parte de nuestro camino.\nSerá un honor y una inmensa alegría contar con tu presencia en este día tan especial, compartir juntos este momento y crear recuerdos que atesoraremos por siempre.",
+    mensajeInvitacion: "Hay alegrías que se hacen más grandes cuando se comparten. Por eso, queremos invitarte a celebrar nuestra boda y este nuevo capítulo de nuestras vidas.\nNos hará muy felices contar con tu presencia y guardar juntos recuerdos inolvidables.",
 
     // ---------- Cuenta regresiva y calendario ----------
     cuentaRegresiva: { titulo: "Faltan" },
@@ -37,7 +37,7 @@ const CONFIG = {
     },
 
     // ---------- Galería ----------
-    galeriaTitulo: "Nuestra Historia",
+    galeriaTitulo: "Siempre Nosotros",
     galeria: [
         "assets/images/image1.jpg",
         "assets/images/image2.jpg",
@@ -45,10 +45,10 @@ const CONFIG = {
         "assets/images/image4.jpg"
     ],
     galeriaFrases: [
-        "Nuestros comienzos",
-        "Siempre juntos",
-        "Nuevas aventuras",
-        "Siempre tú y yo"
+        "Abrazar la vida contigo",
+        "Paso a paso, de tu mano",
+        "Mirar en la misma dirección",
+        "Sí, acepto"
     ],
 
     // ---------- Itinerario ----------
@@ -58,16 +58,16 @@ const CONFIG = {
         { hora: "2:30 PM", evento: "Ceremonia Religiosa",   icono: "iglesia" },
         { hora: "5:00 PM", evento: "Recepción y Coctel",    icono: "bienvenida" },
         { hora: "5:30 PM", evento: "Entrada de los novios", icono: "novios" },
-        { hora: "6:00 PM", evento: "Cena",                  icono: "cena" },
-        { hora: "7:00 PM", evento: "Fiesta",                icono: "fiesta" },
-        { hora: "1:00 AM", evento: "Fin",                   icono: "auto" }
+        { hora: "7:00 PM", evento: "Cena",                  icono: "cena" },
+        { hora: "9:00 PM", evento: "Fiesta",                icono: "fiesta" },
+        { hora: "1:00 AM", evento: "Despedida",     icono: "auto" }
     ],
 
     // ---------- Código de vestimenta ----------
     vestimenta: {
         mostrar: true,
         titulo: "Código de Vestimenta",
-        codigo: "Formal de día / Elegante",
+        codigo: "Formal / Elegante",
         descripcion: "Queremos verte elegante y cómodo para disfrutar con nosotros de principio a fin.",
         imagen: "assets/images/codigo-vestimenta-pareja.png",
         imagenAlt: "Pareja de novios bailando",
@@ -78,10 +78,13 @@ const CONFIG = {
         coloresReservados: {
             mostrar: true,
             titulo: "Colores reservados",
-            mensaje: "Para que los novios y su cortejo luzcan en las fotos, te pedimos evitar estos colores:",
+            mensaje: "Estos colores están reservados para nuestra celebración; te agradecemos evitar estos tonos:",
             grupos: [
-                { etiqueta: "Novia",           colores: [ { nombre: "Blanco", hex: "#FFFFFF" }, { nombre: "Marfil", hex: "#F3EAD2" } ] },
-                { etiqueta: "Damas de honor",  colores: [ { nombre: "Verde salvia", hex: "#9CAF88" } ] }
+                { colores: [
+                    { nombre: "Blanco", hex: "#FFFFFF" },
+                    { nombre: "Azul oscuro", hex: "#1F3A5F" },
+                    { nombre: "Verde oliva", hex: "#6B8E23" }
+                ] }
             ]
         }
     },
@@ -91,12 +94,8 @@ const CONFIG = {
     regalos: {
         mostrar: true,
         titulo: "Regalos",
-        mensaje: "Tu presencia es nuestro mejor regalo. Si además deseas tener un detalle con nosotros, lo recibiremos con todo el cariño.",
+        mensaje: "Para nosotros, el mejor regalo es compartir este día con ustedes; su presencia es lo más importante. Para quienes deseen tener un detalle adicional con nosotros, tendremos una lluvia de sobres.",
         opciones: [
-            { tipo: "sobre", activo: true,
-              titulo: "Lluvia de sobres",
-              texto: "El día de la boda tendremos un buzón dispuesto para recibir tu sobre con cariño." },
-
             // EJEMPLO de transferencia (cambia "activo" a true y completa los datos)
             { tipo: "cuenta", activo: false,
               titulo: "Transferencia",

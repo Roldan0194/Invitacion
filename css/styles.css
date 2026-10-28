@@ -35,7 +35,7 @@ img { max-width: 100%; display: block; }
         url("../assets/images/textura-papel.jpg");
     background-repeat: no-repeat, repeat;
     background-size: 100% 100%, 1144px 2048px;
-    border-radius: 6px;
+    border-radius: 20px;
     overflow: hidden;
 }
 @media (min-width: 800px) {
