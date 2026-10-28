@@ -7,23 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const coverDivider = document.getElementById('sobre-divisor');
     let opening = false;
 
-    const namesParameter = new URLSearchParams(window.location.search).get('nombres');
-    if (namesParameter) {
-        try {
-            const names = JSON.parse(namesParameter);
-            if (Array.isArray(names) && names.every((name) => typeof name === 'string')) {
-                const formattedNames = names.map((name) => name.trim()).filter(Boolean);
-                if (formattedNames.length) {
-                    guestNames.textContent = formattedNames.join(', ');
-                    guestNames.hidden = false;
-                    coverDivider.hidden = false;
-                }
-            } else {
-                console.warn('El parámetro "nombres" debe contener un arreglo JSON de nombres.');
-            }
-        } catch {
-            console.warn('No se pudo interpretar el parámetro JSON "nombres".');
-        }
+    const formattedNames = new URLSearchParams(window.location.search)
+        .getAll('nombre')
+        .map((name) => name.trim())
+        .filter(Boolean);
+    if (formattedNames.length) {
+        guestNames.textContent = formattedNames.join(', ');
+        guestNames.hidden = false;
+        coverDivider.hidden = false;
     }
 
     const openImageSource = envelopeImage.dataset.openSrc.trim();
