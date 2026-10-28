@@ -100,9 +100,9 @@ img { max-width: 100%; display: block; }
     font-family: var(--fuente-script); font-weight: 400; color: var(--tinta);
     font-size: clamp(2.295rem, 8.5vw, 3.145rem); line-height: 1.1; text-align: center; margin-bottom: .45em;
 }
-.seccion { position: relative; z-index: 1; padding: 43.2px 0; }
+.seccion { position: relative; z-index: 1; padding: 21.17px 0; }
 .contenido { width: min(calc(100% - 68px), 560px); margin: 0 auto; text-align: center; }
-.rama { width: 150px; margin: 0 auto 11.2px; color: var(--tinta); }
+.rama { position: relative; left: 50%; display: block; width: min(420px, 90vw); max-width: 90vw; height: auto; margin: 0 0 11.2px; transform: translateX(-50%); }
 .anillos-portada {
     width: clamp(74.06px, 19.16vw, 106.26px);
     height: auto;
@@ -367,7 +367,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
     html { font-size: 17px; }
-    .seccion { padding: 35.2px 0; }
+    .seccion { padding: 17.25px 0; }
     .grid-2 { grid-template-columns: 1fr; gap: 34px; }
     .lugar-icon svg { width: 108px; height: 108px; }
     .timeline-item { min-height: 88px; }

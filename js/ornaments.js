@@ -78,12 +78,6 @@ const ORNAMENTS = (() => {
         `<path d="M138 446C120 430 112 452 138 458C162 462 168 440 150 434M150 452C180 468 200 470 214 490M144 458C130 476 124 486 120 496" fill="none" stroke="var(--cordel)" stroke-width="3.2" stroke-linecap="round"/>`
     ].join(''));
 
-    // Rama horizontal con simetría (divisor bajo la fecha)
-    const sprigDivider = () => {
-        const half = sprig([0, 22, 30, 12, 60, 30, 100, 18], { n: 4, len: 18, seed: 14, buds: false });
-        return svg('0 0 220 44', `<g transform="translate(110 4)"><g>${half}</g><g transform="scale(-1 1)">${half}</g></g>`, 'orn-divider');
-    };
-
     const dividerHeart = () => svg('0 0 300 24', `<path class="o-linea" d="M8 12H122M178 12H292"/><path d="M150 18.4l-1-.9C144 13 141 10.4 141 7.5 141 5.3 142.8 4 144.6 4c1.9 0 3.5 1 5.4 3 1.9-2 3.500-3 5.400-3C157.200 4 159 5.300 159 7.500c0 2.900-3 5.500-8 10Z" fill="var(--tinta)"/>`, 'orn-divider');
 
     const sello = () => {
@@ -125,7 +119,7 @@ const ORNAMENTS = (() => {
             </g>`, 'orn-pueblo');
     };
 
-    const mapa = { floralTL, floralBL, sprigDivider, dividerHeart, sello, matasellos, pueblo };
+    const mapa = { floralTL, floralBL, dividerHeart, sello, matasellos, pueblo };
     return mapa;
 })();
 

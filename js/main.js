@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pequeña rama decorativa al inicio de cada sección con título
     document.querySelectorAll('#cuenta-regresiva, #galeria, #itinerario, #vestimenta, #regalos, #recomendaciones, #rsvp').forEach(sec => {
-        sec.querySelector('.contenido').insertAdjacentHTML('afterbegin', '<div class="rama" data-ornament="sprigDivider"></div>');
+        sec.querySelector('.contenido').insertAdjacentHTML('afterbegin', '<img class="rama" src="assets/images/divisor-floral.png" alt="" aria-hidden="true">');
     });
 
     // Ornamentos, papel rasgado y animaciones
